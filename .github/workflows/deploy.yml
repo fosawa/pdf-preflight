@@ -27,6 +27,7 @@ jobs:
 
       - run: npm ci
 
+      # コアは Node でも動く。デプロイ前にサンプルPDFで回帰テストする。
       - name: Run checker against sample PDFs
         run: npm test
 
