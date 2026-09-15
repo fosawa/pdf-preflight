@@ -1,0 +1,37 @@
+{
+  "id": "offset_coated",
+  "label": "商業オフセット / コート紙",
+  "version": "2026.09.1",
+  "_note": "数値は商業オフセット・コート紙の一般値。自社の印刷条件に合わせて調整すること。",
+
+  "rules": {
+    "file.encrypted":              { "severity": "reject" },
+    "file.javascript":             { "severity": "review" },
+    "file.embedded_files":         { "severity": "review" },
+
+    "box.trim_missing":            { "severity": "reject" },
+    "box.containment":             { "severity": "reject" },
+    "box.bleed_insufficient":      { "severity": "reject", "min_mm": 3.0, "tolerance_pt": 0.1 },
+    "box.size_not_uniform":        { "severity": "reject" },
+
+    "font.not_embedded":           { "severity": "reject" },
+    "font.type3":                  { "severity": "review" },
+
+    "color.rgb_used":              { "severity": "reject" },
+    "color.rgb_resource":          { "severity": "review" },
+    "color.output_intent_missing": { "severity": "review" },
+    "color.spot_colors":           { "severity": "review", "allowed": [] },
+    "color.spot_name_collision":   { "severity": "review" },
+
+    "line.too_thin":               { "severity": "review", "min_mm": 0.1 },
+
+    "image.low_resolution":        { "severity": "review", "review_below": 200, "reject_below": 120 },
+    "image.very_low_resolution":   { "severity": "reject" },
+    "image.jpx":                   { "severity": "review" },
+
+    "transparency.blend_mode":     { "severity": "review", "allowed": ["Normal", "Multiply"] },
+
+    "page.printing_annotations":   { "severity": "review" },
+    "page.optional_content":       { "severity": "review" }
+  }
+}
