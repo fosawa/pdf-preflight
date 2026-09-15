@@ -9,7 +9,7 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "check": "tsx cli.ts",
-    "test": "tsx cli.ts samples/real.pdf samples/cmyk-tac360.pdf"
+    "test": "tsx test.ts"
   },
   "dependencies": {
     "mupdf": "^1.28.1"
